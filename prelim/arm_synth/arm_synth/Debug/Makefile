@@ -38,8 +38,9 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../eclipse_adc.c \
-../eclipse_i2c.c \
+../dh_adc.c \
+../dh_dac.c \
+../dh_i2c.c \
 ../Device_Startup/startup_samd11.c \
 ../Device_Startup/system_samd11.c \
 ../main.c
@@ -52,29 +53,33 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-eclipse_adc.o \
-eclipse_i2c.o \
+dh_adc.o \
+dh_dac.o \
+dh_i2c.o \
 Device_Startup/startup_samd11.o \
 Device_Startup/system_samd11.o \
 main.o
 
 OBJS_AS_ARGS +=  \
-eclipse_adc.o \
-eclipse_i2c.o \
+dh_adc.o \
+dh_dac.o \
+dh_i2c.o \
 Device_Startup/startup_samd11.o \
 Device_Startup/system_samd11.o \
 main.o
 
 C_DEPS +=  \
-eclipse_adc.d \
-eclipse_i2c.d \
+dh_adc.d \
+dh_dac.d \
+dh_i2c.d \
 Device_Startup/startup_samd11.d \
 Device_Startup/system_samd11.d \
 main.d
 
 C_DEPS_AS_ARGS +=  \
-eclipse_adc.d \
-eclipse_i2c.d \
+dh_adc.d \
+dh_dac.d \
+dh_i2c.d \
 Device_Startup/startup_samd11.d \
 Device_Startup/system_samd11.d \
 main.d
@@ -95,14 +100,21 @@ LINKER_SCRIPT_DEP+=  \
 
 
 # AVR32/GNU C Compiler
-./eclipse_adc.o: .././eclipse_adc.c
+./dh_adc.o: .././dh_adc.c
 	@echo Building file: $<
 	@echo Invoking: ARM/GNU C Compiler : 6.3.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\arm\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMD11D14AM__ -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\arm\CMSIS\5.4.0\CMSIS\Core\Include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD11_DFP\1.1.81\include"  -O1 -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-./eclipse_i2c.o: .././eclipse_i2c.c
+./dh_dac.o: .././dh_dac.c
+	@echo Building file: $<
+	@echo Invoking: ARM/GNU C Compiler : 6.3.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\arm\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMD11D14AM__ -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\arm\CMSIS\5.4.0\CMSIS\Core\Include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD11_DFP\1.1.81\include"  -O1 -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./dh_i2c.o: .././dh_i2c.c
 	@echo Building file: $<
 	@echo Invoking: ARM/GNU C Compiler : 6.3.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\arm\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMD11D14AM__ -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\arm\CMSIS\5.4.0\CMSIS\Core\Include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD11_DFP\1.1.81\include"  -O1 -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

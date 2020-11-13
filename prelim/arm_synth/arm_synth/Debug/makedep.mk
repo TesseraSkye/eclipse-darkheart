@@ -2,9 +2,11 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-eclipse_adc.c
+dh_adc.c
 
-eclipse_i2c.c
+dh_dac.c
+
+dh_i2c.c
 
 Device_Startup\startup_samd11.c
 

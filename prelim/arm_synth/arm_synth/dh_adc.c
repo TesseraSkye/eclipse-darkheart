@@ -1,5 +1,5 @@
 #include "sam.h"
-#include "ECLIPSE_adc.h"
+#include "dh_adc.h"
 void setupADC(void) {
   
 	/* Enable the APB clock for the ADC. */
@@ -39,11 +39,11 @@ void setupADC(void) {
 	ADC->REFCTRL.reg = ADC_REFCTRL_REFSEL_INTVCC1;
   
 
-	ADC->AVGCTRL.reg = ECLIPSE_ADC_NUM_SAMPS | ECLIPSE_ADC_ADJRES; //tweak later for N/R if it's an issue
+	ADC->AVGCTRL.reg = DH_ADC_NUM_SAMPS | DH_ADC_ADJRES; //tweak later for N/R if it's an issue
   
 	// prescale div and resolution
-	ADC->CTRLB.reg = ECLIPSE_ADC_PRESCALER_DIV |
-					ECLIPSE_ADC_RESSEL;
+	ADC->CTRLB.reg = DH_ADC_PRESCALER_DIV |
+					DH_ADC_RESSEL;
 
   /* Configure the input parameters.
   
@@ -135,7 +135,7 @@ void setADCInput(uint8_t pinNum) {
 	ADC->INPUTCTRL.reg =
 		ADC_INPUTCTRL_GAIN_DIV2 |
 		ADC_INPUTCTRL_MUXNEG_GND |
-		pinNum; //formatted as "ADC_INPUTCTRL_MUXPOS_PINx"
+		ADC_INPUTCTRL_MUXPOS(pinNum);
 };
 
 //func to read ADC

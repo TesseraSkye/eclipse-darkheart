@@ -1,4 +1,4 @@
-main.d main.o: .././main.c \
+dh_adc.d dh_adc.o: .././dh_adc.c \
  C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD11_DFP\1.1.81\include/sam.h \
  C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD11_DFP\1.1.81\include/samd11d14am.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gcc\arm-none-eabi\6.3.1\include\stdint.h \
@@ -62,7 +62,7 @@ main.d main.o: .././main.c \
  C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD11_DFP\1.1.81\include/instance/usb.h \
  C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD11_DFP\1.1.81\include/instance/wdt.h \
  C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD11_DFP\1.1.81\include/pio/samd11d14am.h \
- .././dh_synth.h .././dh_adc.h .././dh_dac.h
+ .././dh_adc.h
 
 C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD11_DFP\1.1.81\include/sam.h:
 
@@ -190,8 +190,4 @@ C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD11_DFP\1.1.81\include/
 
 C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD11_DFP\1.1.81\include/pio/samd11d14am.h:
 
-.././dh_synth.h:
-
 .././dh_adc.h:
-
-.././dh_dac.h:

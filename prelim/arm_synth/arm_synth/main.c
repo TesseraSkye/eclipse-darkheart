@@ -5,8 +5,8 @@
  * Author : Tess
  */ 
 
-
 #include "sam.h"
+#include "dh_synth.h"
 
 
 int main(void)
@@ -18,9 +18,12 @@ int main(void)
     setupADC();
     //setupI2C();
 
-    /* Replace with your application code */
-    while (1) 
-    {
-		uint16_t res = readADC();
+    while (1) {
+		
+		uint16_t adcRes[DH_CONTROL_NUM] = {0,0,0,0};
+		//for(uint8_t i = 0; i<DH_CONTROL_NUM; i++) {
+		setADCInput(2);
+		adcRes[0] = readADC();
+		//}
     }
 }

@@ -159,19 +159,25 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="eclipse_adc.c">
+    <Compile Include="dh_dac.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="eclipse_adc.h">
+    <Compile Include="dh_adc.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="eclipse_i2c.c">
+    <Compile Include="dh_adc.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="eclipse_i2c.h">
+    <Compile Include="dh_dac.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="eclipse_synth.h">
+    <Compile Include="dh_i2c.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="dh_i2c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="dh_synth.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Device_Startup\startup_samd11.c">
